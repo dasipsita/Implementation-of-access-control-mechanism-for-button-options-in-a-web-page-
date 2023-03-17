@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Icon Font Stylesheet -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet"> 
+<!-- <script src="{% static 'main.js' %}"></script> -->
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 4px 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {background: #eee;}
+
+.default {color: black;}
+</style>
+
+</head>
+<body>
+    <button onclick="checkaccess()" id = "1" class="btn default">Button1</button>
+    <button onclick="checkaccess()" id = "2" class="btn default">Button2</button>
+    <button onclick="checkaccess()" id = "3" class="btn default">Button3</button>
+    <button onclick="checkaccess()" id = "4" class="btn default">Button4</button>
+    <button onclick="checkaccess()" id = "5" class="btn default">Button5</button>
+    <button onclick="checkaccess()" id = "6" class="btn default">Button6</button>
+    <button onclick="checkaccess()" id = "7" class="btn default">Button7</button>
+    <button onclick="checkaccess()" id = "8" class="btn default">Button8</button>
+    <button onclick="checkaccess()" id = "9" class="btn default">Button9</button>
+    <button onclick="checkaccess()" id = "10" class="btn default">Button10</button>
+    <button onclick="checkaccess()" id = "11" class="btn default">Button11</button>
+    <button onclick="checkaccess()" id = "12" class="btn default">Button12</button>
+    <button onclick="checkaccess()" id = "13" class="btn default">Button13</button>
+    <button onclick="checkaccess()" id = "14" class="btn default">Button14</button>
+    <button onclick="checkaccess()" id = "15" class="btn default">Button15</button>
+    <button onclick="checkaccess()" id = "16" class="btn default">Button16</button>
+    <button onclick="checkaccess()" id = "17" class="btn default">Button17</button>
+    <button onclick="checkaccess()" id = "18" class="btn default">Button18</button>
+    <button onclick="checkaccess()" id = "19" class="btn default">Button19</button>
+    <button onclick="checkaccess()" id = "20" class="btn default">Button20</button>
+    <button onclick="checkaccess()" id = "21" class="btn default">Button21</button>
+    <button onclick="checkaccess()" id = "22" class="btn default">Button22</button>
+    <button onclick="checkaccess()" id = "23" class="btn default">Button23</button>
+    <button onclick="checkaccess()" id = "24" class="btn default">Button24</button>
+    <button onclick="checkaccess()" id = "25" class="btn default">Button25</button>
+    <button onclick="checkaccess()" id = "26" class="btn default">Button26</button>
+    <button onclick="checkaccess()" id = "27" class="btn default">Button27</button>
+    <button onclick="checkaccess()" id = "28" class="btn default">Button28</button>
+    <button onclick="checkaccess()" id = "29" class="btn default">Button29</button>
+    <button onclick="checkaccess()" id = "30" class="btn default">Button30</button>
+    <button onclick="checkaccess()" id = "31" class="btn default">Button31</button>
+    <button onclick="checkaccess()" id = "32" class="btn default">Button32</button>
+
+
+    {% if access_to_buttons %}<input type="hidden" id="access_to_buttons" name="variable" value="{{ access_to_buttons  }}">{% endif %}
+
+    <br><a class="btn btn-primary" href="{% url 'home'%}">Return to previous page</a>
+
+    <script>
+    var buttonID = document.getElementById("access_to_buttons").value;
+    function checkaccess() {
+        console.log(buttonID)
+        console.log(event.target.id)
+        var length = buttonID.length;
+        for (var i = 0; i <= length; i++) {
+            if (event.target.id === buttonID[i]){
+            document.getElementById(event.target.id).style.color = "green";}
+        }
+        // if (_.contains(buttonID, event.target.id) ){
+        //     document.getElementById(event.target.id).style.color = "green";
+        // } else {
+        //     document.getElementById(event.target.id).style.color = "red";
+        // }
+    }    
+    </script>
+</body>    
+
+</html>
