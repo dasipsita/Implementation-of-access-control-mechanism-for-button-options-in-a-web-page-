@@ -201,7 +201,7 @@ def binary_to_decimal(binary_num_list):
     for i in range(length):
       sum = int(binary_num_list[i])*(2**(length-i))
       print ("sum:",sum)
-      num = num + sum
+      num += sum
     print (num)
     return num
 
